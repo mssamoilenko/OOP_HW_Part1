@@ -1,3 +1,4 @@
+import datetime
 #task1
 class Auto:
     def __init__(self, model, year, fabrik, engine_volume, color, price):
@@ -54,3 +55,29 @@ for result in search_results:
 search_results = auto_collection.search("Audi")
 for result in search_results:
     print(result)
+
+#task2
+
+class Book:
+    def __init__(self, title, author, birth_year, publisher, genre, price):
+        self.title = title
+        self.author = author
+        self.birth_year = birth_year
+        self.publisher = publisher
+        self.genre = genre
+        self.price = price
+
+    def getInfo(self):
+        return (f"\nНазва книги '{self.title}',  \nавтор: {self.author},"
+                f"\nрік видання: {self.birth_year}, "
+                f"\nвидавництво: {self.publisher},"
+                f"\nжанр: {self.genre},"
+                f"\nціна: {self.price}")
+
+    def calculate_age(self):
+        year_now = datetime.datetime.now().year
+        return f"Вік книги: {year_now - self.birth_year} роки/ів"
+
+book_1 = Book("Ворон", "Едгар Аллан По", 1850, "Абабагаламага", "хорор", "150 грн")
+print(book_1.getInfo())
+print(book_1.calculate_age())
