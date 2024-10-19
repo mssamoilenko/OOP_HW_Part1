@@ -81,3 +81,36 @@ class Book:
 book_1 = Book("Ворон", "Едгар Аллан По", 1850, "Абабагаламага", "хорор", "150 грн")
 print(book_1.getInfo())
 print(book_1.calculate_age())
+
+#task3
+class Stadium:
+    def __init__(self, name, opening_date, country, city, capacity):
+        self.name = name
+        self.opening_date = opening_date
+        self.country = country
+        self.city = city
+        self.capacity = capacity
+
+    def input_data(self):
+        self.name = input("Введіть назву стадіону: ")
+        self.opening_date = input("Введіть дату відкриття (формат: рік-місяць-день): ")
+        self.country = input("Введіть країну: ")
+        self.city = input("Введіть місто: ")
+        self.capacity = int(input("Введіть місткість стадіону: "))
+
+    def display_data(self):
+        print(f"Назва стадіону: {self.name}")
+        print(f"Дата відкриття: {self.opening_date}")
+        print(f"Країна: {self.country}")
+        print(f"Місто: {self.city}")
+        print(f"Місткість: {self.capacity}")
+
+    def update_capacity(self, new_capacity):
+        self.capacity = new_capacity
+        print(f"Місткість стадіону оновлено на {self.capacity} місць.")
+
+stadium = Stadium("Національний стадіон", "2003-10-01", "Україна", "Київ", 70000)
+stadium.display_data()
+stadium.update_capacity(80000)
+stadium.input_data()
+stadium.display_data()
